@@ -3,17 +3,19 @@ form {
   padding: 50px;
   width: 70%;
   display: flex;
+  align-items: center;
   flex-direction: column;
   gap: 40px;
   border: solid 2px #1E2C3D;
 
   input {
-    width: 200px;
+    width: 250px;
     height: 30px;
     color: $textColor;
     background-color: transparent;
     border: none;
     border-bottom: 3px solid $borderBottomInput;
+    border-radius: 10px;
 
     &:focus {
       outline: none;
@@ -27,13 +29,64 @@ form {
 
   .formNames {
     @include phoneOnly {
+      justify-content: center;
       flex-wrap: wrap;
     }
   }
 
   .formText {
     display: flex;
+    align-items: center;
     gap: 40px;
     color: $title;
+
+    select {
+      padding: 5px;
+      color: $textColor;
+      background-color: rgba(0, 191, 255, 0.34);
+      border: none;
+      border-bottom: 2px solid $borderBottomInput;
+      border-radius: 10px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .formMessage {
+    color: $title;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+
+    textarea {
+      width: 40vw;
+      padding: 10px;
+      color: $textColor;
+      background-color: rgba(0, 191, 255, 0.34);
+      border: none;
+      border-radius: 10px;
+      resize: none;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .button {
+    width: 130px;
+    height: 40px;
+    font-size: 1.1em;
+    background-color: rgba(0, 191, 255, 0.34);
+    cursor: pointer;
+    transition: all .4s ease-in-out;
+
+    &:hover {
+      transition: all .4s ease-in-out;
+      color: $borderBottomInput;
+    }
   }
 }

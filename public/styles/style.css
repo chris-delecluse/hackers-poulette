@@ -26,17 +26,19 @@ form {
   padding: 50px;
   width: 70%;
   display: flex;
+  align-items: center;
   flex-direction: column;
   gap: 40px;
   border: solid 2px #1E2C3D;
 }
 form input {
-  width: 200px;
+  width: 250px;
   height: 30px;
   color: #F3F6F9;
   background-color: transparent;
   border: none;
   border-bottom: 3px solid #FFD700;
+  border-radius: 10px;
 }
 form input:focus {
   outline: none;
@@ -47,13 +49,57 @@ form .formNames, form .formGender {
 }
 @media (max-width: 599px) {
   form .formNames {
+    justify-content: center;
     flex-wrap: wrap;
   }
 }
 form .formText {
   display: flex;
+  align-items: center;
   gap: 40px;
   color: deepskyblue;
+}
+form .formText select {
+  padding: 5px;
+  color: #F3F6F9;
+  background-color: rgba(0, 191, 255, 0.34);
+  border: none;
+  border-bottom: 2px solid #FFD700;
+  border-radius: 10px;
+}
+form .formText select:focus {
+  outline: none;
+}
+form .formMessage {
+  color: deepskyblue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+form .formMessage textarea {
+  width: 40vw;
+  padding: 10px;
+  color: #F3F6F9;
+  background-color: rgba(0, 191, 255, 0.34);
+  border: none;
+  border-radius: 10px;
+  resize: none;
+}
+form .formMessage textarea:focus {
+  outline: none;
+}
+form .button {
+  width: 130px;
+  height: 40px;
+  font-size: 1.1em;
+  background-color: rgba(0, 191, 255, 0.34);
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+form .button:hover {
+  transition: all 0.4s ease-in-out;
+  color: #FFD700;
 }
 
 /*# sourceMappingURL=style.css.map */
