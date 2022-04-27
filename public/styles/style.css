@@ -100,7 +100,8 @@ form .formMessage {
 }
 form .formMessage textarea {
   display: block;
-  width: 55vw;
+  width: 40vw;
+  height: 120px;
   padding: 10px;
   color: #F3F6F9;
   background-color: rgba(0, 191, 255, 0.34);
