@@ -56,14 +56,14 @@ form {
   }
 
   .formMessage {
-    color: $title;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 12px;
 
     textarea {
-      width: 40vw;
+      display: block;
+      width: 55vw;
       padding: 10px;
       color: $textColor;
       background-color: rgba(0, 191, 255, 0.34);

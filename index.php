@@ -58,8 +58,8 @@
                 </select>
             </label>
         </div>
-        <label class="formMessage">Message
-            <textarea name="message" cols="20" rows="5"></textarea>
+        <label class="formMessage">
+            <textarea name="message" cols="20" rows="5" placeholder="Enter your message here..."></textarea>
         </label>
         <input class="button" type="submit" name="submit" value="Send request">
     </form>
