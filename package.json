@@ -1,0 +1,20 @@
+{
+  "name": "hackers-poulette",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sources/sass/main.scss:./public/styles/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chris-delecluse/hackers-poulette.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chris-delecluse/hackers-poulette/issues"
+  },
+  "homepage": "https://github.com/chris-delecluse/hackers-poulette#readme"
+}

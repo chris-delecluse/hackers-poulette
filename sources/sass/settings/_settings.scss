@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Bellota+Text:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+$bodyBackground : #0B1928;
+$title : deepskyblue;
+$borderBottomInput : #FFD700;
+$textColor : #F3F6F9;
+
+@mixin phoneOnly {
+  @media (max-width: 599px) { @content; }
+}
+
+body {
+  background-color: $bodyBackground;
+  font-family: 'Bellota Text', cursive;
+  color: #F3F6F9;
+  margin: 25px auto;
+}

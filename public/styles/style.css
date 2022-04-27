@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Bellota+Text:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+body {
+  background-color: #0B1928;
+  font-family: "Bellota Text", cursive;
+  color: #F3F6F9;
+  margin: 25px auto;
+}
+
+header div {
+  margin: 0 auto;
+  padding: 13px 50px;
+  width: 70%;
+  border: solid 2px #1E2C3D;
+  border-bottom: none;
+}
+header div h1 {
+  color: deepskyblue;
+}
+header div p {
+  line-height: 1.5em;
+  font-size: 1.2em;
+}
+
+form {
+  margin: 0 auto;
+  padding: 50px;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  border: solid 2px #1E2C3D;
+}
+form input {
+  width: 200px;
+  height: 30px;
+  color: #F3F6F9;
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid #FFD700;
+}
+form input:focus {
+  outline: none;
+}
+form .formNames, form .formGender {
+  display: flex;
+  gap: 25px;
+}
+@media (max-width: 599px) {
+  form .formNames {
+    flex-wrap: wrap;
+  }
+}
+form .formText {
+  display: flex;
+  gap: 40px;
+  color: deepskyblue;
+}
+
+/*# sourceMappingURL=style.css.map */

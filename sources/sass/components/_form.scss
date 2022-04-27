@@ -1,0 +1,39 @@
+form {
+  margin: 0 auto;
+  padding: 50px;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  border: solid 2px #1E2C3D;
+
+  input {
+    width: 200px;
+    height: 30px;
+    color: $textColor;
+    background-color: transparent;
+    border: none;
+    border-bottom: 3px solid $borderBottomInput;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .formNames, .formGender {
+    display: flex;
+    gap: 25px;
+  }
+
+  .formNames {
+    @include phoneOnly {
+      flex-wrap: wrap;
+    }
+  }
+
+  .formText {
+    display: flex;
+    gap: 40px;
+    color: $title;
+  }
+}
