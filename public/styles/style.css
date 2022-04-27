@@ -6,19 +6,38 @@ body {
   margin: 25px auto;
 }
 
-header div {
+header .headerText {
   margin: 0 auto;
   padding: 13px 50px;
   width: 70%;
   border: solid 2px #1E2C3D;
   border-bottom: none;
 }
-header div h1 {
+header .headerText h1 {
   color: deepskyblue;
 }
-header div p {
+header .headerText p {
+  margin-bottom: 70px;
   line-height: 1.5em;
   font-size: 1.2em;
+}
+header .imgWrapper {
+  position: relative;
+}
+header .imgWrapper .imgContainer {
+  width: 180px;
+  position: absolute;
+  top: -95px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .imgWrapper .imgContainer img {
+  width: 250px;
+  background-repeat: no-repeat;
 }
 
 form {
@@ -46,6 +65,9 @@ form input:focus {
 form .formNames, form .formGender {
   display: flex;
   gap: 25px;
+}
+form .formNames {
+  margin-top: 70px;
 }
 @media (max-width: 599px) {
   form .formNames {
@@ -87,7 +109,7 @@ form .formMessage textarea {
   resize: none;
 }
 form .formMessage textarea:focus {
-  outline: none;
+  outline: solid 1px #FFD700;
 }
 form .button {
   width: 130px;

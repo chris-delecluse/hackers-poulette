@@ -28,6 +28,7 @@ form {
   }
 
   .formNames {
+    margin-top: 70px;
     @include phoneOnly {
       justify-content: center;
       flex-wrap: wrap;
@@ -71,7 +72,7 @@ form {
       resize: none;
 
       &:focus {
-        outline: none;
+        outline: solid 1px $borderBottomInput;
       }
     }
   }

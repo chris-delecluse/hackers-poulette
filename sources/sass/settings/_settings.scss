@@ -4,6 +4,7 @@ $bodyBackground : #0B1928;
 $title : deepskyblue;
 $borderBottomInput : #FFD700;
 $textColor : #F3F6F9;
+$line : #F3F6F9;
 
 @mixin phoneOnly {
   @media (max-width: 599px) { @content; }
@@ -12,6 +13,6 @@ $textColor : #F3F6F9;
 body {
   background-color: $bodyBackground;
   font-family: 'Bellota Text', cursive;
-  color: #F3F6F9;
+  color: $line;
   margin: 25px auto;
 }

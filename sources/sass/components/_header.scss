@@ -1,5 +1,5 @@
 header {
-  div {
+  .headerText {
     margin: 0 auto;
     padding: 13px 50px;
     width: 70%;
@@ -11,8 +11,30 @@ header {
     }
 
     p {
+      margin-bottom: 70px;
       line-height: 1.5em;
       font-size: 1.2em;
+    }
+  }
+
+  .imgWrapper {
+    position: relative;
+
+    .imgContainer {
+      width: 180px;
+      position: absolute;
+      top: -95px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width:  250px;
+        background-repeat: no-repeat;
+      }
     }
   }
 }
