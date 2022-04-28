@@ -1,0 +1,15 @@
+l{
+    "name": "diwaa/hackers-poulette",
+    "autoload": {
+        "psr-4": {
+            "Diwaa\\HackersPoulette\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Christopher Delecluse",
+            "email": "christopherdeleclusepro@gmail.com"
+        }
+    ],
+    "require": {}
+}
