@@ -1,4 +1,4 @@
-<form action="sources/Controllers/supportFormController.php"
+<form action="../controllers/supportFormController.php"
       method="post">
 
     <div class="formNames">

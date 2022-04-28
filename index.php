@@ -1,4 +1,4 @@
-<?php require("sources/Views/templates/Head.php"); ?>
-<?php require("sources/Views/HeaderView.php") ?>
-<?php require("sources/Views/FormView.php") ?>
-<?php require("sources/Views/templates/Footer.php") ?>
+<?php require("src/views/templates/Head.php"); ?>
+<?php require("src/views/HeaderView.php") ?>
+<?php require("src/views/FormView.php") ?>
+<?php require("src/views/templates/Footer.php") ?>

@@ -19,7 +19,7 @@ class AutoSendMail
         );
     }
 
-    public function sendMail() : string
+    public function sendMail(): string
     {
         return mail($this->mailTo, $this->subject, $this->message, $this->additionalHeaders);
     }
