@@ -1,4 +1,4 @@
-<form action="src/controllers/ValidateFormDataController.php"
+<form action="src/controllers/validateFormDataController.php"
       method="post">
 
     <div class="formNames">

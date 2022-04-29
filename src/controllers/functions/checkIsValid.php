@@ -23,7 +23,7 @@ function checkMailIsValid(string $email) : string {
     }
 }
 
-function checkMessageIsValid($message) : string {
+function checkMessageIsValid(string $message) : string {
     $errorMsg = "Error : message is not valid...";
 
     if (strlen($message) <= 400) {
