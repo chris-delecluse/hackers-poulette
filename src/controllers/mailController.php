@@ -4,10 +4,8 @@ session_start();
 
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
 
 require '../../vendor/autoload.php';
-require "../.hidden/login.php";
 include "../controllers/validateFormDataController.php";
 
 $phpmailer = new PHPMailer();
@@ -24,8 +22,8 @@ try {
     $phpmailer->Host = 'smtp.mailtrap.io';
     $phpmailer->SMTPAuth = true;
     $phpmailer->Port = 2525;
-    $phpmailer->Username = $Username;
-    $phpmailer->Password = $Password;
+    $phpmailer->Username = 'c9f291fc9fbd40';
+    $phpmailer->Password = '227068e691bac5';
 
     $phpmailer->CharSet = "utf-8";
     $phpmailer->addAddress("diwacode@gmail.com");
