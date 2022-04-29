@@ -2,7 +2,7 @@
     "name": "diwaa/hackers-poulette",
     "autoload": {
         "psr-4": {
-            "Diwaa\\HackersPoulette\\": "src/"
+            "App\\": "src/"
         }
     },
     "authors": [
@@ -11,5 +11,7 @@
             "email": "christopherdeleclusepro@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "phpmailer/phpmailer": "^6.6"
+    }
 }
