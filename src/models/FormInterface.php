@@ -1,6 +1,6 @@
 <?php
 
-namespace App\models\interfaces;
+namespace App\models;
 
 use app;
 

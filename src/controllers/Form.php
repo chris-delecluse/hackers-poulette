@@ -1,9 +1,9 @@
 <?php
 
-namespace App\models;
+namespace App\controllers;
 
 use app;
-use App\models\interfaces\FormInterface;
+use App\models\FormInterface;
 
 class Form implements FormInterface
 {
@@ -27,7 +27,11 @@ class Form implements FormInterface
     }
 
     public function getFirstname() : string {
-        return htmlspecialchars($this->inputFirstname);
+        if (!empty($this->inputFirstname)) {
+            return htmlspecialchars($this->inputFirstname);
+        } else {
+            return $this->sendError();
+        }
     }
 
     public function getLastName() : string {
@@ -52,5 +56,10 @@ class Form implements FormInterface
 
     public function getMessage() : string {
         return htmlspecialchars($this->inputMessage);
+    }
+
+    private function sendError()
+    {
+        return "Error: ";
     }
 }
