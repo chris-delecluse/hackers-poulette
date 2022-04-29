@@ -5,7 +5,7 @@ namespace App\controllers;
 use app;
 use App\models\FormInterface;
 
-class Form implements FormInterface
+class FormController implements FormInterface
 {
     private string $inputFirstname;
     private string $inputLastName;
@@ -35,31 +35,55 @@ class Form implements FormInterface
     }
 
     public function getLastName() : string {
-        return htmlspecialchars($this->inputLastName);
+        if (!empty($this->inputLastName)) {
+            return htmlspecialchars($this->inputLastName);
+        } else {
+            return $this->sendError();
+        }
     }
 
     public function getGender() : string {
-        return htmlspecialchars($this->inputGender);
+        if (!empty($this->inputGender)) {
+            return htmlspecialchars($this->inputGender);
+        } else {
+            return $this->sendError();
+        }
     }
 
     public function getEmail() : string {
-        return htmlspecialchars($this->inputEmail);
+        if (!empty($this->inputEmail)) {
+            return htmlspecialchars($this->inputEmail);
+        } else {
+            return $this->sendError();
+        }
     }
 
     public function getCountry() : string {
-        return htmlspecialchars($this->inputCountry);
+        if (!empty($this->inputCountry)) {
+            return htmlspecialchars($this->inputCountry);
+        } else {
+            return $this->sendError();
+        }
     }
 
     public function getSubject() : string {
-        return htmlspecialchars($this->inputSubject);
+        if (!empty($this->inputSubject)) {
+            return htmlspecialchars($this->inputSubject);
+        } else {
+            return $this->sendError();
+        }
     }
 
     public function getMessage() : string {
-        return htmlspecialchars($this->inputMessage);
+        if (!empty($this->inputMessage)) {
+            return htmlspecialchars($this->inputMessage);
+        } else {
+            return $this->sendError();
+        }
     }
 
-    private function sendError()
+    private function sendError() : string
     {
-        return "Error: ";
+        return "Error: Please fill all field.";
     }
 }
