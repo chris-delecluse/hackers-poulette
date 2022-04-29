@@ -2,18 +2,22 @@
 
 session_start();
 
-foreach ($_SESSION as $item) {
-    echo $item;
-}
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 
 require '../../vendor/autoload.php';
-include "src/.hidden/login.php";
-include "src/controllers/validateFormDataController.php";
+require "../.hidden/login.php";
+include "../controllers/validateFormDataController.php";
 
 $phpmailer = new PHPMailer();
+
+$buildMessage = "Firstname: {$_SESSION['firstname']}
+Lastname: {$_SESSION['lastname']} 
+Gender: {$_SESSION['gender']}
+Country: {$_SESSION['country']} 
+Subject: {$_SESSION['subject']} 
+Message: {$_SESSION['message']}";
 
 try {
     $phpmailer->isSMTP();
@@ -23,19 +27,15 @@ try {
     $phpmailer->Username = $Username;
     $phpmailer->Password = $Password;
 
-    $phpmailer->SMTPDebug = SMTP::DEBUG_SERVER;
-
     $phpmailer->CharSet = "utf-8";
     $phpmailer->addAddress("diwacode@gmail.com");
-    $phpmailer->addCC("christopherdeleclusepro@gmail.com");
-    $phpmailer->addBCC("hiddenchrisdazer@gmail.com");
-    $phpmailer->setFrom("no-reply@site.fr");
-    $phpmailer->Subject = "Subject of the message";
-    $phpmailer->Body = "Message here.... ";
+    $phpmailer->setFrom($_SESSION['email']);
+    $phpmailer->Subject = $_SESSION['subject'];
+    $phpmailer->Body = $buildMessage;
     $phpmailer->send();
 
     echo "message has been send";
-
+    header("location: ../../index.php");
 } catch (Exception) {
     echo "Message cannot be send. Error: {$phpmailer->ErrorInfo}";
 }
