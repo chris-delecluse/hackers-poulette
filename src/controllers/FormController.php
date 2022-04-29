@@ -1,6 +1,6 @@
 <?php
 
-namespace App\controllers;
+namespace App\src\controllers;
 
 use app;
 
@@ -14,7 +14,7 @@ class FormController
     protected string $inputSubject;
     protected string $inputMessage;
 
-    public function __construct(array|string $arrayOfInputData)
+    public function __construct(array $arrayOfInputData)
     {
         $this->inputFirstname = $arrayOfInputData['firstname'];
         $this->inputLastName = $arrayOfInputData['lastname'];

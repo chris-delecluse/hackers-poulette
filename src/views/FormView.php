@@ -1,12 +1,12 @@
-<form action="../controllers/supportFormController.php"
+<form action="src/controllers/TestController.php"
       method="post">
 
     <div class="formNames">
         <label>
-            <input type="text" name="firstName" placeholder="Enter your firstname">
+            <input type="text" name="firstname" placeholder="Enter your firstname">
         </label>
         <label>
-            <input type="text" name="lastName" placeholder="Enter your lastname">
+            <input type="text" name="lastname" placeholder="Enter your lastname">
         </label>
     </div>
     <div class="formGender">

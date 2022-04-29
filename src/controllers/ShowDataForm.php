@@ -1,6 +1,6 @@
 <?php
 
-namespace App\controllers;
+namespace App\src\controllers;
 
 use app;
 use App\models\FormInterface;
@@ -8,56 +8,37 @@ use App\models\FormInterface;
 class ShowDataForm extends FormController implements FormInterface
 {
     public function getFirstname() : string {
-        if (!empty($this->inputFirstname)) {
-            return htmlspecialchars($this->inputFirstname);
-        } else {
-            return $this->sendError();
-        }
+        return $this->isEmptyOrNot($this->inputFirstname);
     }
 
     public function getLastName() : string {
-        if (!empty($this->inputLastName)) {
-            return htmlspecialchars($this->inputLastName);
-        } else {
-            return $this->sendError();
-        }
+        return $this->isEmptyOrNot($this->inputLastName);
     }
 
     public function getGender() : string {
-        if (!empty($this->inputGender)) {
-            return htmlspecialchars($this->inputGender);
-        } else {
-            return $this->sendError();
-        }
+        return $this->isEmptyOrNot($this->inputGender);
     }
 
     public function getEmail() : string {
-        if (!empty($this->inputEmail)) {
-            return htmlspecialchars($this->inputEmail);
-        } else {
-            return $this->sendError();
-        }
+        return $this->isEmptyOrNot($this->inputEmail);
     }
 
     public function getCountry() : string {
-        if (!empty($this->inputCountry)) {
-            return htmlspecialchars($this->inputCountry);
-        } else {
-            return $this->sendError();
-        }
+        return $this->isEmptyOrNot($this->inputCountry);
     }
 
     public function getSubject() : string {
-        if (!empty($this->inputSubject)) {
-            return htmlspecialchars($this->inputSubject);
-        } else {
-            return $this->sendError();
-        }
+        return $this->isEmptyOrNot($this->inputSubject);
     }
 
     public function getMessage() : string {
-        if (!empty($this->inputMessage)) {
-            return htmlspecialchars($this->inputMessage);
+        return $this->isEmptyOrNot($this->inputMessage);
+    }
+
+    private function isEmptyOrNot($string) : string
+    {
+        if (!empty($string)) {
+            return htmlspecialchars($string);
         } else {
             return $this->sendError();
         }
@@ -65,6 +46,6 @@ class ShowDataForm extends FormController implements FormInterface
 
     private function sendError() : string
     {
-        return "Error: Please fill all field.";
+        return "Error: Please fill the field.";
     }
 }

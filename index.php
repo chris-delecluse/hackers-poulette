@@ -1,4 +1,6 @@
-<?php require("src/views/templates/Head.php"); ?>
-<?php require("src/views/HeaderView.php") ?>
-<?php require("src/views/FormView.php") ?>
-<?php require("src/views/templates/Footer.php") ?>
+<?php
+require "vendor/autoload.php";
+require("src/views/templates/Head.php");
+require("src/views/HeaderView.php");
+require("src/views/FormView.php");
+require("src/views/templates/Footer.php");
