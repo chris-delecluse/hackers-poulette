@@ -2,7 +2,7 @@
 
 function checkUserInfoAreValid(string $username) : string {
     $errorMsg = "Error : User information are not valid.";
-    $regex = "#$%^&*()+=-[]';,./{}|:<>?~";
+    $regex = '/[#$%&*()+=\-\[\];,.\/{}|":<>?~\\\\]/';
 
     $result = !preg_match($regex, $username);
 

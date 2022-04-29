@@ -1,6 +1,6 @@
 <?php
 
-namespace App\models;
+namespace App\src\models;
 
 interface FormInterface
 {
