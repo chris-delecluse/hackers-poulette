@@ -2,8 +2,6 @@
 
 namespace App\models;
 
-use app;
-
 interface FormInterface
 {
     public  function getFirstName() : string;
