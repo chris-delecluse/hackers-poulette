@@ -1,4 +1,10 @@
-<form action="src/controllers/validateFormDataController.php"
+<?php $pageTitle = "Hackers poulette";
+      $pageCSS = "public/styles/style.css";
+
+ob_start();
+require "headerView.php"; ?>
+
+<form action="src/controllers/getForm.php"
       method="post">
 
     <div class="formNames">
@@ -30,7 +36,7 @@
     <div>
         <label class="formText">Subject
             <select name="subject">
-                <option value="1">1</option>
+                <option value="1"></option>
                 <option value="2">2</option>
                 <option value="3">3</option>
             </select>
@@ -41,3 +47,6 @@
     </label>
     <input class="button" type="submit" name="submit" value="Send request">
 </form>
+
+<?php $pageContent = ob_get_clean();
+require "src/layouts/layout.php";

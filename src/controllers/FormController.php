@@ -1,27 +1,53 @@
 <?php
 
 namespace App\src\controllers;
+use App\models\FormInterface;
 
-use app;
+require "../models/FormInterface.php";
 
-class FormController
+class FormController implements FormInterface
 {
-    protected string $inputFirstname;
-    protected string $inputLastName;
-    protected string $inputGender;
-    protected string $inputEmail;
-    protected string $inputCountry;
-    protected string $inputSubject;
-    protected string $inputMessage;
+    private $data;
 
-    public function __construct(array $arrayOfInputData)
+    public function __construct($formData)
     {
-        $this->inputFirstname = $arrayOfInputData['firstname'];
-        $this->inputLastName = $arrayOfInputData['lastname'];
-        $this->inputGender = $arrayOfInputData['gender'];
-        $this->inputEmail = $arrayOfInputData['email'];
-        $this->inputCountry = $arrayOfInputData['country'];
-        $this->inputSubject = $arrayOfInputData['subject'];
-        $this->inputMessage = $arrayOfInputData['message'];
+        $this->data = $this->cleanData($formData);
+    }
+
+    private function cleanData($formData)
+    {
+        foreach ($formData as $data) {
+            $data = trim($data);
+            $data = stripslashes($data);
+            $data = htmlspecialchars($data);
+        }
+
+        return $formData;
+    }
+
+    public function isValid() : void
+    {
+        if (!empty($this->data['firstname'])
+            && strlen($this->data['firstname']) <= 25
+            && !empty($this->data['lastname'])
+            && strlen($this->data['lastname']) <= 25
+            && !empty($this->data['email'])
+            && filter_var($this->data['email'], FILTER_VALIDATE_EMAIL)
+            && !empty($this->data['country'])
+            && strlen($this->data['country']) <= 30
+            && !empty($this->data['gender'])
+            && !empty($this->data['subject'])
+            && !empty($this->data['message'])
+            && strlen($this->data['message']) <= 255
+        ) {
+            header("location: ../views/confirmRequestView.php");
+        } else {
+            header("location: ../views/formErrorView.php");
+        }
+    }
+
+    public function getData()
+    {
+        return $this->data;
     }
 }

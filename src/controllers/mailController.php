@@ -1,21 +1,22 @@
-<?php /** @noinspection PhpUndefinedVariableInspection */
+<?php
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require "../../vendor/phpmailer/phpmailer/src/Exception.php";
+require "../../vendor/phpmailer/phpmailer/src/PHPMailer.php";
+require "../../vendor/phpmailer/phpmailer/src/SMTP.php";
 
 session_start();
 
-use PHPMailer\PHPMailer\Exception;
-use PHPMailer\PHPMailer\PHPMailer;
-
-require '../../vendor/autoload.php';
-include "../controllers/validateFormDataController.php";
-
 $phpmailer = new PHPMailer();
 
-$buildMessage = "Firstname: {$_SESSION['firstname']}
-Lastname: {$_SESSION['lastname']} 
-Gender: {$_SESSION['gender']}
-Country: {$_SESSION['country']} 
-Subject: {$_SESSION['subject']} 
-Message: {$_SESSION['message']}";
+$buildMessage = "Firstname: {$_SESSION['post']['firstname']}
+Lastname: {$_SESSION['post']['lastname']} 
+Gender: {$_SESSION['post']['gender']}
+Country: {$_SESSION['post']['country']} 
+Subject: {$_SESSION['post']['subject']} 
+Message: {$_SESSION['post']['message']}";
 
 try {
     $phpmailer->isSMTP();
@@ -27,13 +28,17 @@ try {
 
     $phpmailer->CharSet = "utf-8";
     $phpmailer->addAddress("diwacode@gmail.com");
-    $phpmailer->setFrom($_SESSION['email']);
-    $phpmailer->Subject = $_SESSION['subject'];
+    $phpmailer->setFrom($_SESSION['post']['email']);
+    $phpmailer->Subject = $_SESSION['post']['subject'];
     $phpmailer->Body = $buildMessage;
     $phpmailer->send();
 
     echo "message has been send";
-    header("location: ../../index.php");
+    session_unset();
+    session_destroy();
+    header("location: ../views/sendSuccessfullyView.php");
 } catch (Exception) {
+    session_unset();
+    session_destroy();
     echo "Message cannot be send. Error: {$phpmailer->ErrorInfo}";
 }
