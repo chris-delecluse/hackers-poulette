@@ -36,9 +36,9 @@ require "headerView.php"; ?>
     <div>
         <label class="formText">Subject
             <select name="subject">
-                <option value="1"></option>
-                <option value="2">2</option>
-                <option value="3">3</option>
+                <option value="Connection problem in game">Connection problem in game</option>
+                <option value="Report toxic player">Report toxic player</option>
+                <option value="Unable to login in the account ?">Unable to login in the account ?</option>
             </select>
         </label>
     </div>
