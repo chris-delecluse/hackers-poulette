@@ -1,7 +1,7 @@
 <?php
 
 namespace App\src\controllers;
-use App\models\FormInterface;
+use App\src\models\FormInterface;
 
 require "../models/FormInterface.php";
 
